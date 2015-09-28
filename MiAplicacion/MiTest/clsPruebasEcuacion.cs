@@ -5,11 +5,9 @@ using MiEcuacion;
 /* 
 tarea moral:
 cree pruebas unitarias para los siguientes casos:
-- Pruebas correctas para resultados reales con muchos decimales, 
-  de modo que la coincidencia NO sea exacta y se apruebe 
-  cuando coincidan al menos en el sexto decimal
-- pruebas correctas para cuando el discriminante es negativo
-- pruebas para cuando el valor de a (primerNumero) es igual a cero (0)
+- Pruebas correctas para resultados reales con muchos decimales, de modo que la coincidencia NO sea exacta y se apruebe cuando coincidan al menos en el sexto decimal.
+- Pruebas correctas para cuando el discriminante es negativo.
+- Pruebas para cuando el valor de a (primerNumero) es igual a cero (0).
 */
 
 namespace MiTest
@@ -51,8 +49,10 @@ namespace MiTest
 
             Assert.IsTrue((primeraRaizEsperada == p.primeraRaiz) || (primeraRaizEsperada == p.segundaRaiz));
             Assert.IsTrue((segundaRaizEsperada == p.primeraRaiz) || (segundaRaizEsperada == p.segundaRaiz));
+
         }
 
+        [TestMethod]
         public void ProbarDiscrimnateCorrecto()
         {
             //Variables para los parametros reales.
@@ -71,6 +71,7 @@ namespace MiTest
             Assert.IsTrue(false == aux);
         }
 
+        [TestMethod]
         public void DiscrimnateDiferenteCero()
         {
             //Variables para los parametros reales.
@@ -86,8 +87,7 @@ namespace MiTest
             aux = validacion.ValidarDiscriminante(p);
 
             //Validar que los valores reales son iguales a los esperados. 
-            Assert.IsTrue(p.a == 0);
+            Assert.IsTrue(p.a != 0);
         }
-
     }
 }

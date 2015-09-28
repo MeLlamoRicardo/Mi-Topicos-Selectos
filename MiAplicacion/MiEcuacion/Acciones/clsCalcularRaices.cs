@@ -10,8 +10,15 @@ namespace MiEcuacion
     {
         public void CalcularRaices(clsMisParametros p)
         {
-            p.primeraRaiz= (-(p.b) + Math.Sqrt(p.discriminante)) / (2 * p.a);
-            p.segundaRaiz = (-(p.b) - Math.Sqrt(p.discriminante)) / (2 * p.a);
+            if (p.a != 0) {
+                p.primeraRaiz = (-(p.b) + Math.Sqrt(p.discriminante)) / (2 * p.a);
+                p.segundaRaiz = (-(p.b) - Math.Sqrt(p.discriminante)) / (2 * p.a);
+            }
+            else
+            {
+                Exception ex = new Exception(string.Format("Error, el valor de a es cero "));
+                throw ex;
+            }
         }
     }
 }
