@@ -89,5 +89,10 @@ namespace MiTest
             //Validar que los valores reales son iguales a los esperados. 
             Assert.IsTrue(p.a != 0);
         }
+        [TestMethod]
+        public void Prueba()
+        {
+        }
+
     }
 }
